@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
-  get 'static_pages/home', to: 'static_pages#home'
-  get 'static_pages/help', to: 'static_pages#help'
-  get 'static_pages/about', to: 'static_pages#about'
-  # The priority is based upon order of creation: first created -> highest priority.
+  
+
+  root 'static_pages#home'
+  get 'help'    => 'static_pages#help'
+  get 'about'   => 'static_pages#about'
+  get 'contact' => 'static_pages#contact'
+  get 'signup'  => 'users#new'
+end 
+ 
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
@@ -56,4 +61,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
+
